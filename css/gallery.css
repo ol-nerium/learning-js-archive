@@ -1,0 +1,20 @@
+.gallery-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+
+  gap: 24px 48px;
+
+  padding: 20px;
+}
+
+@media (min-width: 1000px) {
+  .gallery-list {
+    padding: 100px 156px;
+  }
+}
+
+img {
+  aspect-ratio: 18/15;
+  object-fit: cover;
+}
