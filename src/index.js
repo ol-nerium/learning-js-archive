@@ -1,6 +1,6 @@
 import './sass/main.scss';
 import galleryItems from './js/initialData';
-import { modalOpen, changeLightboxImage } from './js/modalInterface';
+import modalOpen from './js/modalInterface';
 
 export const gallery = document.querySelector('.js-gallery');
 export const lightbox = document.querySelector('.js-lightbox');
@@ -39,9 +39,5 @@ function getOriginalImgData(event) {
     return;
   }
 
-  const src = event.target.dataset.source;
-  const alt = event.target.getAttribute('alt');
-
   modalOpen(event);
-  changeLightboxImage(src, alt);
 }

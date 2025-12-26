@@ -1,5 +1,16 @@
 import { gallery, lightbox, lightboxImage, lightboxOverlay, modalClsBtn } from '../index';
-export { modalOpen, changeLightboxImage };
+
+function modalOpen(event) {
+  const src = event.target.dataset.source;
+  const alt = event.target.getAttribute('alt');
+  changeLightboxImage(src, alt);
+  lightbox.classList.add('is-open');
+
+  modalClsBtn.addEventListener('click', modalClose);
+  lightboxOverlay.addEventListener('click', modalClose);
+  window.addEventListener('keydown', modalClose);
+  window.addEventListener('keydown', modalKeyInterface);
+}
 
 function modalClose(event) {
   if (event.code !== 'Escape' && event.target !== event.currentTarget) {
@@ -17,28 +28,14 @@ function modalClose(event) {
   lightboxImage.setAttribute('alt', '');
 }
 
-function modalOpen(event) {
-  modalClsBtn.addEventListener('click', modalClose);
-  lightbox.classList.add('is-open');
-
-  lightboxOverlay.addEventListener('click', modalClose);
-
-  window.addEventListener('keydown', modalClose);
-  window.addEventListener('keydown', modalKeyInterface);
-}
-
 function changeLightboxImage(src, alt) {
   lightboxImage.setAttribute('src', src);
   lightboxImage.setAttribute('alt', alt);
 }
 
 function modalKeyInterface(event) {
-  const imgArray = [];
   const itemsArray = gallery.querySelectorAll('.gallery__image');
-
-  [...itemsArray].forEach(element => {
-    imgArray.push(element.dataset.source);
-  });
+  const imgArray = [...itemsArray].map(element => element.dataset.source);
 
   const currentSrc = lightboxImage.getAttribute('src');
   let index = imgArray.indexOf(currentSrc);
@@ -54,7 +51,6 @@ function modalKeyInterface(event) {
     if (index <= 0) {
       index = itemsArray.length;
     }
-    console.log(index);
     index -= 1;
   }
 
@@ -62,3 +58,5 @@ function modalKeyInterface(event) {
   const alt = itemsArray[index].getAttribute('alt');
   changeLightboxImage(src, alt);
 }
+
+export default modalOpen;
