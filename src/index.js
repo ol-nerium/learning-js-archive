@@ -19,11 +19,12 @@ menuBoard.innerHTML = eventsTemplate({ items: upcominEvents });
 if (!currentTheme) {
   currentTheme = Theme.LIGHT;
 }
+
 body.classList.add(currentTheme);
 
-themeToggle.checked = body.classList.contains(Theme.LIGHT) ? false : true;
+themeToggle.checked = body.classList.contains(Theme.DARK);
 
-function onThemeChange(event) {
+function onThemeChange() {
   if (themeToggle.checked) {
     body.classList.replace(Theme.LIGHT, Theme.DARK);
   } else body.classList.replace(Theme.DARK, Theme.LIGHT);
