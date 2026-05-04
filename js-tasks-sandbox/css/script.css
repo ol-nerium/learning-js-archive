@@ -1,0 +1,47 @@
+.script-section {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.create-block {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 16px;
+  flex-shrink: 1;
+  padding: 32px;
+  background: #f6f6fe;
+}
+
+input {
+  margin: 0;
+  border: 1px solid #808080;
+  border-radius: 8px;
+}
+
+button,
+input {
+  flex-basis: calc(100% / 3 - 16px);
+}
+
+.draw-block {
+  padding: 32px;
+  background: #f6f6fe;
+}
+
+.draw-block-list {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.draw-block-list-item {
+  background-color: yellowgreen;
+  width: 30px;
+  height: 30px;
+}
+
+.draw-block-list-item:first-child {
+  height: 50px;
+}

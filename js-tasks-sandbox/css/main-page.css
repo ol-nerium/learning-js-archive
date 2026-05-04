@@ -1,0 +1,33 @@
+body {
+  background-color: #22090c;
+  color: #edd2d4;
+
+  font-family: "UnifrakturCook", cursive;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 2rem;
+}
+
+.main-list {
+  width: 100vw;
+  height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.main-list-item a {
+  color: currentColor;
+  text-transform: capitalize;
+  transition: all 1s ease-in-out;
+}
+
+.main-list-item:hover {
+  position: relative;
+
+  text-shadow: red 2px -5px;
+  transform: scale(1.2);
+}

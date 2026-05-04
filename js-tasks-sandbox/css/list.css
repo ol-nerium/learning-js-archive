@@ -1,0 +1,44 @@
+:root {
+  --font-family: "Montserrat", sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding: 24px;
+}
+
+.list-item {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  background: #f6f6fe;
+  padding: 16px;
+}
+
+.list-item-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.list-item-list-item {
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  letter-spacing: 0.04em;
+  color: #2e2f42;
+
+  padding: 8px 16px;
+  border: 1px solid #808080;
+  border-radius: 4px;
+  /* width: 360px; */
+  height: 40px;
+
+  text-transform: capitalize;
+}
