@@ -1,0 +1,41 @@
+body {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow-x: hidden;
+
+  margin: 0;
+}
+
+ul,
+li {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+.gallery {
+  z-index: -1;
+}
+
+.back-link {
+  display: block;
+  font-size: 3rem;
+  position: fixed;
+  left: 100%;
+  top: 100%;
+  translate: -100% -100%;
+  width: max-content;
+  z-index: 1111;
+  padding: 10px;
+  opacity: 0.1;
+  transition: opacity 0.25s ease;
+}
+
+.back-link:hover {
+  opacity: 1;
+}
