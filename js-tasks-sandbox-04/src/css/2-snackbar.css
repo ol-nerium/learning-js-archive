@@ -1,0 +1,29 @@
+.form {
+  border: 1px dashed rgb(208, 118, 9);
+  font-size: 2rem;
+  width: 50%;
+  margin: 0 auto;
+
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+label {
+  display: flex;
+}
+
+input[name='delay'] {
+  flex-grow: 1;
+}
+
+fieldset {
+  display: flex;
+  justify-content: space-between;
+}
+
+button {
+  width: 100%;
+  font-size: 1.5rem;
+  padding: 5px;
+}
